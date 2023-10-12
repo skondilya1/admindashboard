@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { Bar } from 'react-chartjs-2';
+import { PolarArea } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  RadialLinearScale,
+  ArcElement,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+ChartJS.register(
+  RadialLinearScale,
+  ArcElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  );
 
 function App() {
+  const data = {
+     
+  }
+  const options = {
+    
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+   <Bar data={data} options={options}></Bar>
+   <PolarArea data={data} />
+   </>
   );
 }
 
